@@ -1,0 +1,47 @@
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+/// アカウント
+model Account {
+    /// ID
+    id                String  @id @default(cuid())
+    /// ユーザーID
+    userId            String
+    /// タイプ
+    type              String
+    /// リフレッシュトークン
+    refresh_token     String? @db.Text
+}
+
+/// セッション
+model Session {
+    /// ID
+    id           String   @id @default(cuid())
+    /// セッショントークン
+    sessionToken String   @unique
+    /// ユーザーID
+    userId       String
+    /// 失効日時
+    expires      DateTime
+
+    // リレーション
+    user         User     @relation(name: "SessionToUser", fields: [userId], references: [id])
+}
+
+/// ユーザー
+model User {
+    /// ID
+    id            String        @id @default(cuid())
+    /// 名前
+    name          String?
+    /// Eメール
+    email         String?       @unique
+    /// 認証済みフラグ
+    emailVerified DateTime?
+}

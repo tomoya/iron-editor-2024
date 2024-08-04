@@ -16,3 +16,34 @@ yasunori
 nekurai
 ...（以下略）
 ```
+
+## お題2
+
+[schema.prisma](schema.prisma)ファイルから、以下のtbls用のコメントYMALファイルを作成してください。
+
+```yaml
+comments:
+  - table: Session
+    tableComment: アカウント
+    columnComments:
+      id: ユーザーID
+      userId: ユーザーID
+      type: タイプ
+      refresh_token: リフレッシュトークン
+  -
+    table: Session
+    tableComment: セッション
+    columnComments:
+      id: ユーザーID
+      sessionToken: セッショントークン
+      userId: ユーザーID
+      expires: 失効日時
+  -
+    table: User
+    tableComment: ユーザー
+    columnComments:
+      id: ユーザーID
+      name: 名前
+      email: Eメール
+      emailVerified: 認証済みフラグ
+```
