@@ -23,10 +23,10 @@ nekurai
 
 ```yaml
 comments:
-  - table: Session
+  - table: Account
     tableComment: アカウント
     columnComments:
-      id: ユーザーID
+      id: ID
       userId: ユーザーID
       type: タイプ
       refresh_token: リフレッシュトークン
@@ -34,7 +34,7 @@ comments:
     table: Session
     tableComment: セッション
     columnComments:
-      id: ユーザーID
+      id: ID
       sessionToken: セッショントークン
       userId: ユーザーID
       expires: 失効日時
@@ -42,7 +42,7 @@ comments:
     table: User
     tableComment: ユーザー
     columnComments:
-      id: ユーザーID
+      id: ID
       name: 名前
       email: Eメール
       emailVerified: 認証済みフラグ
