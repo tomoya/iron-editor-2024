@@ -5,3 +5,14 @@
 ## お題1
 
 [東京Emacs勉強会 サマーフェスティバル2024 参加者一覧](https://tokyo-emacs.connpass.com/event/321255/participation/#participants)をコピーして作成したテキスト [source.txt](source.txt)ファイルから、参加者一覧のリストを作成してください。
+
+### 回答例
+
+こんな感じでユーザー名を1行づつにしてください。
+
+```
+Kyure_A
+yasunori
+nekurai
+...（以下略）
+```
